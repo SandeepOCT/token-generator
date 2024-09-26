@@ -1,0 +1,19 @@
+{
+  "name": "token-generator",
+  "version": "1.0.0",
+  "description": "This is a token generator server, set the environment variables and start the server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon --inspect server.js"
+  },
+  "author": "Sandeep",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
