@@ -54,6 +54,10 @@ app.get('/get-token', async (req, res) => {
     .send('Token has been set in the cookie');
 });
 
+app.get('/v1/client/programAwardLevels/5464be5f-b704-44c7-907f-8cf6103d3f84', (req, res) => {
+  res.json(JSON.parse(readFileSync('./data.json', 'utf8')));
+})
+
 app.use(express.static('dist', { index: false }));
 app.use(compression());
 app.use(express.json());
@@ -67,7 +71,7 @@ app.post('/api/token', async (req, res) => {
   const tokenRes = await fetchToken({
     clientId: req.body.clientId,
     clientSecret: req.body.clientSecret,
-    grantType: req.body.grantType,
+    grantType: req.body.scope,
     accessTokenUrl: req.body.accessTokenUrl,
   });
   res.json(tokenRes);

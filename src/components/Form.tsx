@@ -56,7 +56,7 @@ export default function Form() {
 
     if (state?.options?.autoRefresh && state?.options?.expiresIn) {
       const x = setInterval(saveTokenToCookie, state?.options?.expiresIn * 1000);
-      console.log('Setting interval: ', x);
+      console.log('Setting interval: ', x, state?.options?.expiresIn);
     }
   };
 

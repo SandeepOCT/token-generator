@@ -48,7 +48,6 @@ export default function AppHook() {
 
   const saveTokenToCookie = async () => {
     const data = await makeTokenRequest();
-    data.expires_in = 1;
     console.log('getting token', new Date(), 'expires in', data?.expires_in, 'next refresh at ', new Date(Date.now() + (data?.expires_in) * 1000));
     if (data?.access_token) {
       document.cookie = `${state?.options?.cookieName}=${data.access_token}; expires=${new Date(Date.now() + (state.options.expiresIn) * 1000).toUTCString()}`;
